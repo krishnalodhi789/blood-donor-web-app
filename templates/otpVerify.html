@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block myFun %}counter(60){% endblock myFun %}
+
+{% block content %}
+	<div class="container-fluid vw-100 vh-100" >
+		<div class="row h-100">
+			<div class="col-11 col-lg-6 col-sm-10 border col-md-7 m-auto shadow-sm p-3 rounded ">
+				<h1 class="text-success text-center">Verification</h1>
+				<p class="alert alert-info text-muted  text-center" style="font-size: 18px;font-weight: 600">
+					A One Time Password has been sent to
+					 <br> your registered Mobile No. - <br> 
+					+19 <span class="text-danger">{{mobile}}</span>
+				</p>
+
+				<!-- =======================================
+				OTP Varification Form 
+				=======================================
+				 -->
+				<form action="{% url 'chooseBloodGroup' %}" method="post">
+					{% csrf_token %}
+					<div>
+						<input type="text" class="form-control text-center  w-75 m-auto rounded-pill" name="otp" placeholder="Enter OTP.." size="6" required style="font-weight: 600">
+					</div>
+
+					{% if invalid %}
+					<div class="text-center  my-3 ">
+						<small class="form-text alert alert-danger text-center px-4 py-2"> Wrong OTP. Please Enter Currect OTP.</small>
+					</div>
+					{% endif %}
+					
+					<div class="d-flex justify-content-between  px-2 py-3">
+						<p class="text-muted">If yor entered wrong mobile no! <a href="{% url 'registration' %}">Go back</a> </p>
+						<button class="btn btn-outline-primary fw-bold rounded-pill"id="resend" style="padding: 0px 20px !important;" >Resend <span id="otp_second"></span></button>
+					</div>
+					<div class="w-100 text-center py-2">
+						<button class="btn btn-info fs-5 text-white fw-normal px-4 mx-auto" type="submit">Verify</button>					
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endblock content %}

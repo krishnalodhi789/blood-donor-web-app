@@ -1,0 +1,227 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+
+<div class="cotainer-fluid vh-100">
+  <br /><br /><br />
+  <div class="row py-3">
+    <h1 class="text-center" style="color: rgb(13, 52, 131)">
+      Please Choose Your Blood Group carefully...
+    </h1>
+  </div>
+
+  <!-- ===============================
+			Blood Group Form =============
+			===============================
+			 -->
+
+  <form action="{% url 'profile' %}">
+    <div class="row justify-content-evenly">
+      <div class="col-5">
+        <div class="container-fluid border shadow m-0 p-0">
+          <div class="p-3" style="background-color: rgb(60, 118, 181);color: white;">
+			<h3 class="text-center fs-2 fw-semibold">
+				Choose Your Blood Group....
+			  </h3>
+		  </div>
+          <div class="row px-3">
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupA+" onclick="selected('A+')">
+                <span
+                  class="fw-bold fs-6 p-2  rounded-circle border-2 blood_group"
+                   id="bloodgroupA+">A+</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="A+"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupA-" onclick="selected('A-')">
+                <span
+                  class="fw-bold fs-6  rounded-circle border-2 blood_group"
+                  style="padding: 10px 11px"
+                   id="bloodgroupA-">A-</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="A-"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupB+" onclick="selected('B+')">
+                <span
+                  class="fw-bold fs-6 p-2  rounded-circle border-2 blood_group"
+                   id="bloodgroupB+">B+</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="B+"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupB-" onclick="selected('B-')">
+                <span
+                  class="fw-bold fs-6  rounded-circle border-2 blood_group"
+                  style="padding: 10px 11px"
+                   id="bloodgroupB-">B-</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="B-"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupO+" onclick="selected('O+')">
+                <span
+                  class="fw-bold fs-6 p-2  rounded-circle border-2 blood_group"
+                   id="bloodgroupO+">O+</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="O+"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupO-" onclick="selected('O-')">
+                <span
+                  class="fw-bold fs-6  rounded-circle border-2 blood_group"
+                  style="padding: 10px 11px"
+                   id="bloodgroupO-">O-</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="O-"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupAB+" onclick="selected('AB+')">
+                <span
+                  class="fw-bold fs-6  rounded-circle border-2 blood_group"
+                  style="padding: 11px 9px; font-size: 14px !important"
+                   id="bloodgroupAB+">AB+</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="AB+"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+            <div class="col-3 py-3 position-relative text-center">
+              <img
+                src="{% static 'Images/blood4.png' %}"
+                height="100"
+                width="70"
+                class="mx-auto"
+              />
+              <label for="bloodgroupAB-" onclick="selected('AB-')">
+                <span
+                  class="fw-bold fs-6  rounded-circle border-2 blood_group"
+                  style="padding: 10px 11px"
+                   id="bloodgroupAB-">AB-</span
+                >
+                <input
+                  type="radio"
+                  hidden
+                  value="AB-"
+                  name="BloodGroup"
+                 
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-3 border p-3">
+        <h4 class="fst-italic">Your Blood Group is :</h4>
+        <div
+          id="user_blood"
+          class="p-2 border mx-auto"
+          style="height: 200px; width: 150px"
+        >
+          <img
+            src="{% static 'Images/blood8.gif' %}"
+            alt=""
+            class="h-100 w-100"
+          />
+        </div>
+        <div class="row mt-3">
+          <button
+            class="btn btn-outline-success fw-bold w-50 mx-auto"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock content %}

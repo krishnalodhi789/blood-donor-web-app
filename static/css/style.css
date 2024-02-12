@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    overflow-x: hidden !important;
+}
+
+input{
+	font-weight: 600 !important;
+	color: rgb(10, 10, 10) !important;
+    background-color: transparent !important;
+}
+/* ================================================
+Registration page css ---------------------------
+======================================================= */
+.regi_box{
+    background-image: linear-gradient(to right,rgb(17, 74, 179),rgb(69, 173, 214),rgba(135, 207, 235, 0.766));
+
+} 
+.form_radio_btn #id_gender{
+    display: flex !important;
+}
+.form_radio_btn #id_gender div{
+	padding: 6px 5px !important;
+    font-size: 18px !important;
+    font-weight: bold;
+    color: gray !important;
+}
+.form_radio_btn #id_gender div:first-child{
+	display: none !important;
+}
+
+/* ==============================================================
+Choose Blood Group Page -------------------------------------
+============================================================== */
+.blood_group{
+    position: absolute !important;
+    top: 66% !important;
+    left:50% !important;
+    transform: translate(-50%,-50%);
+    color: rgba(34, 33, 33, 0.818);
+    cursor: pointer;
+    transition: all .1s linear;
+    background-color: #ffffff !important;
+}
+.blood_group:hover{
+    background-color: #ff0900 !important;
+    color: white !important;
+}
+.active_group{    
+    background-color: #ff0900 !important;
+    color: white !important;
+}

@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="m-0 pb-4 p-0 container-fluid regi_box">
+    <br><br>
+        <div class="row pb-3 pt-2">
+            <h1 class="display-5 p-0 fw-bold text-white  text-center">Registration here...</h1>
+        </div>
+        <div class="row justify-content-evenly text-white h-100">
+            <div class="col-3 text-center m-auto">
+                <i class="fa-solid fa-heart-pulse " style="font-size:100px"></i>
+                <h4 class="fw-bold display-5 pt-2">WELCOME</h4>
+                <p class="fs-5">
+                    Every Blood Donor is a Hero.
+                </p>
+                <button class="btn border text-secondary fs-5 fw-bold bg-white
+                    px-4 py-1 rounded-pill mt-auto ">Login</button>
+            </div>
+            <div class="col-5 shadow m-auto p-2 p-4 rounded-3" style="background-color: rgba(255, 255, 255, 0.827);">
+                        {# ===========================================  #}
+                        {# Registration form ------------------------- #}
+                        {# ===========================================  #}
+
+                        <form action="{% url 'otpVerify' %}" method="post">
+                               {% csrf_token %} 
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="first_name" class="form-label mb-0"
+                                        style="font-weight:500; color: rgb(30, 28, 28); font-size:18px;">{{ form.first_name.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    {{form.first_name}}
+                                </div>
+                                <div class="col-6">
+                                    <label for="last_name" class="form-label mb-0"
+                                        style="font-weight: 500; color: rgb(30, 28, 28);  font-size:18px;">{{form.last_name.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    {{form.last_name}}
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <label for="email" class="form-label mb-0"
+                                        style="font-weight: 500; color: rgb(30, 28, 28);  font-size:18px;">{{form.email.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    {{form.email}}
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-12">
+                                    <label for="mobile" class="form-label mb-0"
+                                        style="font-weight: 500; color: rgb(30, 28, 28);  font-size:18px;">{{form.mobile.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    <div class="input-group">
+                                         <div class="input-group-prepend">
+                                    <span class="input-group-text text-muted fw-bold">+19</span>
+                                </div>
+                                    {{form.mobile}}
+                                    </div>
+                                </div>
+                            </div>
+                              <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="state" class="form-label mb-0"
+                                        style="font-weight:500; color: gray; font-size:18px;">{{ form.state.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    {{form.state}}
+                                </div>
+                                <div class="col-6">
+                                    <label for="city" class="form-label mb-0"
+                                        style="font-weight: 500; color: rgb(30, 28, 28);  font-size:18px;">{{form.city.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    {{form.city}}
+                                </div>
+                            </div>
+                              <div class="row mb-2">
+                                <div class="col-12">
+                                    <label for="email" class="form-label mb-0"
+                                        style="font-weight: 500; color: rgb(30, 28, 28);  font-size:18px;">{{form.area.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    {{form.area}}
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col-6">
+                                    <label for="age" class="form-label mb-0"
+                                        style="font-weight: 500; color: rgb(30, 28, 28);  font-size:18px;">{{form.age.label}}
+                                        : <span class="text-danger fw-bold">*</span></label>
+                                    {{form.age}}
+                                </div>
+                                <div class="col-6">
+                                    <label class="form-label mb-0"
+                                    style="font-weight: 500; color: rgb(30, 28, 28);  font-size:18px;">{{form.gender.label}}
+                                    : <span class="text-danger fw-bold">*</span></label>
+                                     <div class="form_radio_btn">{{form.gender}}</div>        
+                                </div>                                
+                            </div>
+                                
+                            <div class="text-center my-2 pt-2">
+                                <button type="submit" value="Submit" class="btn
+                                    btn-success rounded-3 px-5 fs-5 fw-bold" style="color:white !important">
+                                    Submit
+                                    </button>
+                            </div>
+                        </form>
+            </div>
+        </div>
+</div>
+
+{% endblock content %}
